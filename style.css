@@ -1,0 +1,88 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #222;
+}
+.box{
+    width: 400px;
+    height: 250px;
+    background: #262626;
+    position: relative;
+    margin: 50px;
+    font-size: 28px;
+    color: white;
+    
+    
+}
+a{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-size: 87px;
+
+}
+
+.box_introduction p{
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.parent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.box::after,
+.box::before{
+    content: "";
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
+    position: absolute;
+    background-size: 400%;
+    z-index: -1;
+    top: -2px;
+    left: -2px;
+    animation : animated-shadow 10s linear infinite alternate;
+
+}
+.box_introduction::after,
+.box_introduction::before{
+    content: "";
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
+    position: absolute;
+    background-size: 400%;
+    z-index: -1;
+    top: -2px;
+    left: -2px;
+    animation : animated-shadow 10s linear infinite alternate;
+
+}
+.box_introduction::after{
+    filter: blur(30px);
+}
+.box_introduction{
+    width: 800px;
+    height: 250px;
+    background: #262626;
+    position: relative;
+    margin: 50px;
+    margin: 50px auto;
+}
+@keyframes animated-shadow {
+    0%{
+        background-position: 0 0;
+    }
+    50%{
+        background-position: 100% 0;
+    }
+    100%{
+        background-position: 0 0;
+    }
+
+}
